@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('frontend.layouts.mastertwo')
 
 @section('title')
   {{ $product->title }} | Laravel Ecommerce Site

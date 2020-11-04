@@ -21,7 +21,7 @@
         <br>
         <br>
         <br>
-        <div class="wrapper">
+        <div class="wrapper mt-2">
           @include('frontend.partials.footer')
         </div>
 

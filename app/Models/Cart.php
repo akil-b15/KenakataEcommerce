@@ -31,6 +31,23 @@ class Cart extends Model
     return $this->belongsTo(Product::class);
   }
 
+
+//total carts
+//return type int
+  public static function totalCarts()
+  {
+    if (Auth::check()) {
+      $carts = Cart::orwhere('user_id', Auth::id())
+                  ->orWhere('ip_address', request()->ip())
+                  ->get();
+    }else {
+      $carts = Cart::orwhere('ip_address', request()->ip())->get();
+    }
+
+    return $carts;
+  }
+//total items in the carts
+//return type int
   public static function totalItems()
   {
     if (Auth::check()) {

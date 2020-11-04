@@ -45,6 +45,8 @@ Route::group(['prefix'=>'user'], function(){
 Route::group(['prefix'=>'carts'], function(){
   Route::get('/', 'Frontend\CartsController@index')->name('carts');
   Route::post('/store', 'Frontend\CartsController@store')->name('carts.store');
+  Route::post('/update/{id}', 'Frontend\CartsController@update')->name('carts.update');
+  Route::post('/delete/{id}', 'Frontend\CartsController@destroy')->name('carts.delete');
 });
 
 // admin routs
